@@ -9,9 +9,15 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
+<link rel="icon" href="../../music.jpg">
 
 <title>Get your tunes here!</title>
+
+
+<!-- Angular JS -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"
@@ -21,7 +27,7 @@
 <!-- Carousel CSS -->
 <link href="<c:url value="/resources/css/carousel.css"/>"
 	rel="stylesheet">
-	
+
 <!-- Main CSS -->
 <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
 
@@ -46,11 +52,12 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li><a href='<c:url value="/" />'>My Music Store</a></li>
-							<li><a href='<c:url value="/productList" />'>Products</a></li>
+							<li><a href='<c:url value="/product/productList" />'>Products</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 						<ul class="nav navbar-nav pull-right">
 							<li><a href='<c:url value="/admin" />'>Admin</a></li>
+							<li><a href='<c:url value="/register" />'>Register</a></li>
 						</ul>
 
 					</div>

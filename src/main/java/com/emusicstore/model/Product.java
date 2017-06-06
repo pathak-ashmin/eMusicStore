@@ -1,15 +1,25 @@
 package com.emusicstore.model;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-public class Product {
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = 3867353750900229844L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,6 +38,10 @@ public class Product {
 	@Min(value = 0, message = "The product unit must not be less than zero.")
 	private int unitInStock;
 	private String productManufacturer;
+
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
+	private List<CartItem> cartItemList;
 
 	public String getProductName() {
 		return productName;
@@ -99,6 +113,14 @@ public class Product {
 
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+
+	public List<CartItem> getCartItemList() {
+		return cartItemList;
+	}
+
+	public void setCartItemList(List<CartItem> cartItemList) {
+		this.cartItemList = cartItemList;
 	}
 
 }
