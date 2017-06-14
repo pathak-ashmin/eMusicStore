@@ -12,9 +12,7 @@
 
 		<div class="container" ng-app="cartApp">
 			<div class="row">
-				<div class="col-md-5">
-					<img alt="image" src="#" style="width: 100%; height: 300px" />
-				</div>
+				<div class="col-md-3"></div>
 				<div class="col-md-5">
 					<h3>${product.productName }</h3>
 					<p>${product.productDescription }</p>
@@ -45,6 +43,7 @@
 							class="glyphicon glyphicon-hand-right"></span>View Cart</a>
 					</p>
 				</div>
+				<div class="col-md-4"></div>
 			</div>
 		</div>
 

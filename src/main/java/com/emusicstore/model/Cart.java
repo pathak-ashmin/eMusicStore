@@ -1,21 +1,16 @@
 package com.emusicstore.model;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import org.hibernate.annotations.Cascade;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -26,7 +21,7 @@ public class Cart implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private String cartId;
+	private int cartId;
 
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<CartItem> cartItems;
@@ -39,11 +34,11 @@ public class Cart implements Serializable {
 	
 	private double grandTotal;
 
-	public String getCartId() {
+	public int getCartId() {
 		return cartId;
 	}
 
-	public void setCartId(String cartId) {
+	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
 
