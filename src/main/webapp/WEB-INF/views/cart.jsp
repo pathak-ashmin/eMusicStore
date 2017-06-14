@@ -38,7 +38,7 @@
 						<td></td>
 						<td></td>
 						<td>Grand Total</td>
-						<td>{{cart.grandTotal}}</td>
+						<td>{{calculateGrandTotal()}}</td>
 						<td></td>
 					</tr>
 				</table>
@@ -49,6 +49,7 @@
 		</section>
 	</div>
 </div>
+
 
 <script src='<c:url value="/resources/js/controller.js" />'></script>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>
